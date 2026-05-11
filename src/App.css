@@ -1,0 +1,262 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.content-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-width: 0;
+  margin-left: var(--sidebar-width);
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+  position: relative;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  background: linear-gradient(to bottom, #121212 0%, #000000 100%);
+  transition: all 0.3s ease;
+}
+
+.page-container {
+  padding: 32px 32px 64px 32px;
+  max-width: 100%;
+}
+
+/* Tablet: Collapse sidebar */
+@media (max-width: 1024px) {
+  .content-layout {
+    margin-left: 70px;
+  }
+
+  .sidebar {
+    width: 70px !important;
+  }
+
+  .sidebar-header {
+    padding: 20px 10px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .page-container {
+    padding: 24px 20px 80px 20px;
+  }
+}
+
+/* Mobile: Bottom navigation + Sidebar hidden */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column-reverse;
+  }
+
+  .content-layout {
+    margin-left: 0;
+    margin-bottom: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .main-content {
+    height: calc(100vh - 140px);
+    padding-bottom: 20px;
+  }
+
+  .page-container {
+    padding: 20px 16px 40px 16px;
+  }
+
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    border-top: 1px solid var(--border-subtle);
+    padding: 0;
+    z-index: 100;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    border-radius: 0;
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .nav-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .nav-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .music-player {
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    max-height: 60vh;
+    z-index: 50;
+  }
+
+  .player-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .player-track-info {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .album-art-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .player-text-info {
+    justify-content: center;
+  }
+
+  .player-title {
+    font-size: 14px;
+  }
+
+  .player-artist {
+    font-size: 12px;
+  }
+
+  .control-buttons {
+    gap: 8px;
+  }
+
+  .play-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .secondary-control {
+    width: 32px;
+    height: 32px;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+
+  .song-card {
+    min-height: 200px;
+  }
+
+  .search-bar-container {
+    margin: 20px auto;
+    max-width: 100%;
+  }
+
+  .search-filters {
+    padding: 0 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 16px 12px 40px 12px;
+  }
+
+  .artist-profile-name {
+    font-size: 48px;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .song-card-image {
+    border-radius: 4px;
+  }
+
+  .section-content-inner {
+    gap: 12px;
+  }
+}
+
+/* Lobster Two Font Classes */
+.lobster-two-regular {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lobster-two-bold {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-regular-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lobster-two-bold-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Apply Lobster Two font to logo */
+.logo-text {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

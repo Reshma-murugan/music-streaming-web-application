@@ -1,0 +1,73 @@
+:root {
+  /* Vibrant Violet Palette - #AA00FF */
+  --bg-base: #000000;
+  --bg-main: #121212;
+  --bg-card: #181818;
+  --bg-card-hover: #282828;
+  --accent-primary: #AA00FF; /* Vibrant Violet */
+  --accent-hover: #BB33FF; /* Lighter Vibrant Violet */
+  --accent-secondary: #8800CC; /* Darker Vibrant Violet */
+  --accent-gradient: linear-gradient(135deg, #AA00FF 0%, #8800CC 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #BB33FF 0%, #AA00FF 100%);
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --sidebar-width: 260px;
+  --player-height: 90px;
+}
+
+/* Global styles for favorited hearts */
+.favorited-heart,
+.track-heart.favorited,
+.action-button.favorite .lucide-heart {
+  color: var(--accent-primary) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}

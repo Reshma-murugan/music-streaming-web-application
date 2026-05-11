@@ -1,0 +1,89 @@
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-row {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.show-all-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-all-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(170, 0, 255, 0.1);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.section-grid.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 12px; /* space for scrollbar */
+}
+
+.section-grid.horizontal-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.section-grid.horizontal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.section-grid.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.section-grid.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.section-grid.horizontal-scroll > * {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 480px) {
+  .songs-grid, .section-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-grid.horizontal-scroll > * {
+    width: 80vw;
+  }
+}

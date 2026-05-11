@@ -1,0 +1,34 @@
+.waveform-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 24px;
+  gap: 4px;
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 3px;
+}
+
+.waveform-bar {
+  width: 3px;
+  background: linear-gradient(to top, var(--accent-primary), rgba(139, 92, 246, 0.6));
+  border-radius: 2px;
+  min-height: 4px;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+  transform-origin: bottom;
+}
+
+.waveform-bar:hover {
+  filter: brightness(1.2);
+}
